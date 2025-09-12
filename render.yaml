@@ -2,7 +2,7 @@ services:
   - type: web
     name: server
     env: python
-    buildCommand: cd server && pipenv install
+    buildCommand: cd server && ls -la && pipenv install
     startCommand: cd server && pipenv run gunicorn --bind 0.0.0.0:$PORT app:app
 
   - type: web

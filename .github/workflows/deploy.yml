@@ -9,8 +9,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Deploy to Render
+      - name: Deploy Backend
         uses: bounceapp/render-action@0.6.0
         with:
           render-token: ${{ secrets.RENDER_API_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          service-id: srv-d31uif6mcj7s7393mecg
+
+      - name: Deploy Frontend
+        uses: bounceapp/render-action@0.6.0
+        with:
+          render-token: ${{ secrets.RENDER_API_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          service-id: srv-d31um2adbo4c739vn17g
